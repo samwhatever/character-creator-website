@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<style>
+
+
+body {
+    font-family: Outfit;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28;
+}
+
+h2 {
+    font-size: 20;
+}
+
+h3 {
+    font-size: 16;
+}
+
+img {
+        width: 200px;
+ 
+    }
+</style>
+
+<script>
+
+    //Top section
+
+    function getImage() {
+        const images = [];
+        //["image-1.png", "image-2.png", "image-3.png", "image-4.png","image-5.png", "image-6.png", "image-7.png", "image-8.png", "image-9.png", "image-10.png", "image-11.png", "image-12.png", "image-13.png", "image-14.png", "image-15.png", "image-16.png", "image-17.png", "image-18.png", "image-19.png", "image-20.png", "image-21.png", "image-22.png", "image-23.png", "image-24.png", "image-25.png", "image-26.png", "image-27.png", "image-28.png", "image-29.png", "image-30.png", "image-31.png", "image-32.png", "image-33.png" ];
+
+        //first we make the array of girl images
+        for (var i = 1; i <= 33; i++) {
+            images.push("images-" + i + ".png");
+        }
+
+        //Then get a random number, so you have a random image
+        var imageNum = Math.floor(Math.random() * images.length ) + 1;
+
+        //Add the random image in 
+        var src = document.getElementById("image");
+        var img = document.createElement("img");
+        img.src = "file:///Users/Cleo/Desktop/quick-images/image-" + imageNum + ".png";
+        src.appendChild(img);
+
+        //remove the second child
+        if (document.getElementById("image").children.length >1) {
+            src.removeChild(src.children[0]);
+        }
+
+        //document.getElementById("test").innerHTML = imgSrc;
+
+    }
+
+    const names = [ "Maeve", "Michael", "Nicholas", "Brennan", "Brenda", "Madoline", "Mabeline", "Brandy", "Gwendolyn", "Jetts", "Axel", "Kris", "Briss", "Millie", "Billie", "Drenda", "Ethan", "Remington", "Tag", "Void", "Melinda", "Grover", "Harold", "Jimmy", "London", "Fiona", "Emmy", "Emma", "Asmerelda", "Magdaline", "Abby", "Cody", "Devon", "Erin", "Fern", "Glen", "Hammouth", "Indigo", "Janey", "Kiara", "Lemmie", "Nerys", "Ophelia", "Prya", "Quinn", "Rachel", "Steinway", "Trevor", "Ursula", "Victor", "Wendal", "Xena", "Zane", "Greg", "Jeremy", "Blaine", "Lizzie", "Kallie", "Alani", "Damian", "Kimora" ];
+
+    function getName(){
+        document.getElementById("name").innerHTML = names[Math.floor(Math.random() * names.length )];
+    }
+
+    const types = ["Succubus", "Banchee", "Dryad", "Nymph", "Vampire", "Werewolf", "Witch", "Genie", "Fairy", "Dragon", "Wizard", "Selkie", "Shapeshifter", "Pheonix", "Golem", "Mermaid", "Siren",];
+
+    function getType() {
+        document.getElementById("type").innerHTML = types[Math.floor(Math.random() * types.length )];
+    }
+
+    const adjs = ["Goth", "Smart", "Genius", "Excitable", "Cool", "Popular", "Loner", "Geeky", "Nerdy", "Charismatic", "Evil", "Kind", "Generous", "Chill", "Easy going", "Jelous", "Nervous", "Rich", "Athletic", "Artsy", "Poor", "Heartbroken", "Memory wiped", "Actor", "Singer", "Poet", "Apprentice"];
+
+    function getAdj(){
+        document.getElementById("adj").innerHTML = adjs[Math.floor(Math.random() * adjs.length )];
+    }
+
+    const roles = ["Body guard", "Royal", "Teachers pet", "Principals kid", "New kid", "Rock star", "Librarian", "CEO", "Baker", "Gamer", "Reader", "Chef", "Writer", "Henchman", "Bad guy", "Ally contact", "Waiter", "Maid", "Guard", "Shop owner", "Fireman", "Black smith", "Gardener", "Farmer", "Sculptor", "Bee keeper", "Mailman", "Lumber jack", "Painter", "Pirate", "Land lord", "Therapist", "Student", "Tutor", "Teacher", "Programmer", "Mechanic", "Engineer", "Scientist", "Chemist", "Wine taster", "Barista", "Street vendor", "Food truck owner", "Tailor", "Seemstress", "Window Cleaner", "Adventerer", "Soldier"];
+
+    function getRole() {
+        document.getElementById("role").innerHTML = roles[Math.floor(Math.random() * roles.length )];
+    }
+
+    function getAll(){
+        getImage();
+        getName();
+        getType();
+        getAdj();
+        getRole();
+    }
+
+</script>
+</head>
+
+
+
+
+
+<body onload="getAll()" >
+    
+    <!--Header!!! -->
+    <h1>Quick Character</h1>
+    
+    <div>
+        <span id="image"></span>
+        <h2 id="name"></h2>
+        <h3 id="type"></h3>
+        <h3 id="adj"></h3>
+        <h3 id="role"></h3>
+
+        <br>
+
+        <button type="button" onclick="getAll()">Redo All</button>
+        <button type="button" onclick="getImage()">image</button>
+        <button type="button"  onclick="getName()">name</button>
+        <button type="button"  onclick="getType()">type</button>
+        <button type="button"  onclick="getAdj()">adj</button>
+        <button type="button"  onclick="getRole()">role</button>
+
+
+    </div>
+
+    
+</body>
+
+
+</html>
