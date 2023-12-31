@@ -10,8 +10,12 @@
 
 
 body {
+    margin: 0;
     font-family: Outfit;
-    padding: 20px;
+}
+
+#main-section {
+    margin: 40px;
 }
 
 h1 {
@@ -29,7 +33,31 @@ h3 {
 img {
         width: 200px;
  
-    }
+}
+
+    .topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
 </style>
 
 <script>
@@ -51,7 +79,7 @@ img {
         //Add the random image in 
         var src = document.getElementById("image");
         var img = document.createElement("img");
-        img.src = "https://samwhatever.github.io/character-creator-website/quick-images/image-" + imageNum + ".png";
+        img.src = "file:///Users/Cleo/Desktop/quick-images/image-" + imageNum + ".png";
         src.appendChild(img);
 
         //remove the second child
@@ -81,7 +109,7 @@ img {
         document.getElementById("adj").innerHTML = adjs[Math.floor(Math.random() * adjs.length )];
     }
 
-    const roles = ["Body guard", "Royal", "Teachers pet", "Principals kid", "New kid", "Rock star", "Librarian", "CEO", "Baker", "Gamer", "Reader", "Chef", "Writer", "Henchman", "Bad guy", "Ally contact", "Waiter", "Maid", "Guard", "Shop owner", "Fireman", "Black smith", "Gardener", "Farmer", "Sculptor", "Bee keeper", "Mailman", "Lumber jack", "Painter", "Pirate", "Land lord", "Therapist", "Student", "Tutor", "Teacher", "Programmer", "Mechanic", "Engineer", "Scientist", "Chemist", "Wine taster", "Barista", "Street vendor", "Food truck owner", "Tailor", "Seemstress", "Window Cleaner", "Adventerer", "Soldier"];
+    const roles = ["Body guard", "Royal", "Teachers pet", "Principals kid", "New kid", "Rock star", "Librarian", "CEO", "Baker", "Gamer", "Reader", "Chef", "Writer", "Henchman", "Bad guy", "Ally contact", "Waiter", "Maid", "Guard", "Shop owner", "Fireman", "Black smith", "Gardener", "Farmer", "Sculptor", "Bee keeper", "Mailman", "Lumber jack", "Painter", "Pirate", "Land lord", "Therapist", "Student", "Tutor", "Teacher", "Programmer", "Mechanic", "Engineer", "Scientist", "Chemist", "Wine taster", "Barista", "Street vendor", "Food truck owner", "Tailor", "Seemstress", "Window Cleaner", "Adventerer", "Soldier", "Neighbor", "Sibling", "Love-interest", "Murderer", "Police officer", "Friend", "Best friend", "Salesman", "Bartender", "Dancer"];
 
     function getRole() {
         document.getElementById("role").innerHTML = roles[Math.floor(Math.random() * roles.length )];
@@ -103,8 +131,16 @@ img {
 
 
 <body onload="getAll()" >
+
+    <div class="topnav">
+        <ul>
+            <a href="home-page.html">Home</a>
+            <a class ="active" href="quick-character-page.html">Quick Character</a>
+        </ul>
+    </div>
     
     <!--Header!!! -->
+<div id="main-section"> 
     <h1>Quick Character</h1>
     
     <div>
@@ -125,6 +161,7 @@ img {
 
 
     </div>
+</div>
 
     
 </body>
