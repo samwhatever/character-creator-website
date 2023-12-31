@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<style>
+    /* This is where the styling goes */
+    img {
+        width: 200px;
+ 
+    }
+
+</style>
+<script>
+    //Where the Javascript goes
+
+    function getRandomImage() {
+        const girlImages = [];
+
+        //first we make the array of girl images
+        for (var i = 1; i <= 25; i++) {
+            girlImages.push("girl-images" + i + ".png");
+        }
+
+        //Then get a random number, so you have a random image
+        var imageNum = Math.floor(Math.random() * girlImages.length ) + 1;
+
+        //Add the random image in 
+        var src = document.getElementById("girlImages");
+        var img = document.createElement("img");
+        img.src = "file:///Users/Cleo/Desktop/girl-images/girl-image" + imageNum + ".png";
+        src.appendChild(img);
+
+        //remove the second child
+        if (document.getElementById("girlImages").children.length >1) {
+            src.removeChild(src.children[0]);
+        }
+
+        //document.getElementById("test").innerHTML = imgSrc;
+
+    }
+
+</script>
+
+<body onload="getRandomImage()">
+    <!-- Where the body text goes-->
+    <h1>
+        This is your main character!
+    </h1>
+
+    <div id="girlImages"></div>
+
+    <button type="button" onclick="getRandomImage()">Get Random Image</button>
+
+    <p id="test"></p>
+
+</body>
+</html>
